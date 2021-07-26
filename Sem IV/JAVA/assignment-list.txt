@@ -1,5 +1,9 @@
 A1 - Create a file containing hashmap/hashtable which includes correctly spelled words. Implement “ispell” Linux utility using above file.
+
 A2 - Implement chat server using socket programming.
+
 A3 - Implement Producer/Consumer problem using Java threads. 
+
 A4 - Using SQL database for student data to perform the following operation through java using JDBC : 1. Create	2. Insert 3. Delete 4. Update 5. Display 6. Drop
+
 A5 - Implement SQL database for student data to perform the following operation through java using JDBC using Applet/Swing/AWT for UI. 
