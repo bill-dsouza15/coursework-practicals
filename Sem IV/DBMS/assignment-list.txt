@@ -1,10 +1,19 @@
 A1  - Design and Develop SQL DDL statements which demonstrate the use of SQL objects such as Table, View, Index, Sequence, Synonym.
+
 A2  - Design at least 10 SQL queries for suitable database application using SQL DML statements: Insert, Select, Update, Delete with operators, functions, Set operators, Clauses.
+
 A3  - Design at least 10 SQL queries for suitable database applications using SQL DML statements including all types of JOIN, SUB-QUERY & VIEW.
+
 A4  - To write a PL/SQL code to implement all types of cursor(implicit/explicit) and display employ number, name and salary of 5 highest paid employees using cursor.
+
 A5  - PL/SQL Stored Procedure and Stored Function: Write a PL/SQL procedure to find the number of students ranging from 100-80%, 79-70%, 69-60%,59-50 & below 49% in each course from the Student_course table given by the procedure as parameter. Student_course(Roll_no,Course,Course_code,Semester,Total_Marks,Percentage).
+
 A6  - Database Trigger (Row level and Statement level triggers, Before and After Triggers): Write a database trigger on Employee table. The System should keep track of the records that are being updated or deleted. The old value of updated or deleted records should be added in to a new table when the Employee table is updated. Employee (employee no, employee name, join_date, designation, salary).
+
 A7  - To design and develop MongoDB queries using CRUD operations.
+
 A8  - Implement aggregation and indexing with suitable example using MongoDB.
+
 A9  - Implement Map reduces operation with suitable example using MongoDB.
+
 A10 - Implement Mongo database connectivity with Java for Database navigation operations such as insert, delete, update etc. using ODBC/JDBC.
