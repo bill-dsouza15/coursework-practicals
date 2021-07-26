@@ -1,0 +1,3 @@
+Hello this is a test file!
+We are going to count:
+words letters lines

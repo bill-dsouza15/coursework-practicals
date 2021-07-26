@@ -1,0 +1,137 @@
+use College
+
+
+
+db.createCollection("Student")
+
+
+
+db.Student.insert( 
+{ GRNo: 21810305,
+  RollNo: 222016,
+  Name: "Bill Dsouza",
+  Address: {
+  Local: "Wanowrie, Pune",
+  Permanent: "Wanowrie, Pune"
+  },
+  Marks: 100,
+  Status: "Pass",
+  Subject: ["DBMS","TOC","OS","JAVA","M3","SSEE"]
+})
+
+
+
+db.Student.createIndex(
+{ 
+  "_id":1,
+  "GRNo": 1,
+  "RollNo": 1
+},
+{unique: true})
+
+
+
+db.Student.insertMany( [
+{ GRNo: 21810322,
+  RollNo: 222007,
+  Name: "Aditya Borse",
+  Address: {
+  Local: "Katraj, Pune",
+  Permanent: "Katraj, Pune"
+  },
+  Marks: 100,
+  Status: "Pass",
+  Subject: ["DBMS","TOC","OS","JAVA","M3","SSEE"]
+},
+{ GRNo: 21810823,
+  RollNo: 222014,
+  Name: "Ishan Deshpande",
+  Address: {
+  Local: "Kondhwa, Pune",
+  Permanent: "Kondhwa, Pune"
+  },
+  Marks: 100,
+  Status: "Pass",
+  Subject: ["DBMS","TOC","OS","JAVA","M3","SSEE"]
+},
+{ GRNo: 21810456,
+  RollNo: 223002,
+  Name: "Ajit Kumar ",
+  Address: { 
+  Local: "Camp, Pune", 
+  Permanent: "Ahmednagar"
+  },
+  Marks: 83,
+  Status: "Pass",
+  Subject: ["DBMS","TOC","OS","JAVA","M3","SSEE"]
+},
+{ GRNo: 21810723,
+  RollNo: 224003,
+  Name: "Harshit Singh",
+  Address: {
+  Local: "Katraj, Pune",
+  Permanent: "Punjab"
+  },
+  Marks: 35,
+  Status: "Fail",
+  Subject: ["DBMS","TOC","OS","JAVA","M3","SSEE"]
+},
+{ GRNo: 21810219,
+  RollNo: 221007,
+  Name: "Atul Patil",
+  Address: {
+  Local: "Bibwevadi, Pune",
+  Permanent: "Kolhapur, Pune"
+  },
+  Marks: 70,
+  Status: "Pass",
+  Subject: ["DBMS","TOC","OS","JAVA","M3","SSEE"]
+},
+{ GRNo: 21810209,
+  RollNo: 224007,
+  Name: "Sanket Sable",
+  Address: {
+  Local: "Katraj, Pune",
+  Permanent: "Katraj, Pune"
+  },
+  Marks: 35,
+  Status: "Fail",
+  Subject: ["DBMS","TOC","OS","JAVA","M3","SSEE"]
+} ] )
+
+
+
+db.Student.find(
+{ 
+  "Address.Local": "Katraj, Pune"
+},
+{
+  "_id":0, "Address.Permanent": 0, "Marks": 0, "Subject": 0
+} 
+).pretty().limit(2)
+
+
+
+db.Student.updateMany(
+{
+  "Marks": { $gt : 80 } 
+},
+{
+  $set : { "Status": "Distinction" }
+} )
+
+
+
+db.Student.find().pretty()
+
+
+
+db.Student.deleteMany(
+{
+  "Marks": { $lt : 40 }
+} )
+
+
+
+db.Student.find().pretty()
+

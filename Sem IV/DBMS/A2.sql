@@ -1,0 +1,37 @@
+USE EKart;
+CREATE TABLE Customer(CustId INT NOT NULL AUTO_INCREMENT, CustName VARCHAR(20) NOT NULL, DelDate DATE NOT NULL, CustCity VARCHAR(20) NOT NULL, Billing INT NOT NULL, PRIMARY KEY(CustId));
+INSERT INTO Customer(CustId, CustName, DelDate, CustCity, Billing) VALUES(3100, "Jack", '2020-04-21', "Pune", 3000);
+INSERT INTO Customer(CustName, DelDate, CustCity, Billing) VALUES("Rushan", '2020-03-11', "Pune", 2000);
+INSERT INTO Customer(CustName, DelDate, CustCity, Billing) VALUES("Ramesh", '2020-05-01', "Allahbad", 1500);
+INSERT INTO Customer(CustName, DelDate, CustCity, Billing) VALUES("Rajesh", '2020-02-03', "Delhi", 1300);
+INSERT INTO Customer(CustName, DelDate, CustCity, Billing) VALUES("Dhanesh", '2020-02-03', "Mumbai", 4500);
+INSERT INTO Customer(CustName, DelDate, CustCity, Billing) VALUES("Shreya", '2020-02-03', "Delhi", 3000);
+INSERT INTO Customer(CustName, DelDate, CustCity, Billing) VALUES("Joel", '2020-02-03', "Pune", 1300);
+INSERT INTO Customer(CustName, DelDate, CustCity, Billing) VALUES("Ishan", '2020-02-03', "Indore", 2000);
+SELECT * FROM Customer;
+CREATE TABLE Employee(EmployeeNo INT NOT NULL AUTO_INCREMENT, EmployeeName VARCHAR(20) NOT NULL, CustId INT NOT NULL, PRIMARY KEY(EmployeeNo), FOREIGN KEY(CustId) REFERENCES Customer(CustId));
+INSERT INTO Employee(EmployeeNo, EmployeeName, CustId) VALUES(101, "Bill", 3100);
+INSERT INTO Employee(EmployeeName, CustId) VALUES("Aditya", 3104);
+INSERT INTO Employee(EmployeeName, CustId) VALUES("Atharva", 3101);
+INSERT INTO Employee(EmployeeName, CustId) VALUES("Raj", 3106);
+INSERT INTO Employee(EmployeeName, CustId) VALUES("Adnan", 3102);
+INSERT INTO Employee(EmployeeName, CustId) VALUES("Harshal", 3105);
+INSERT INTO Employee(EmployeeName, CustId) VALUES("Amey", 3107);
+INSERT INTO Employee(EmployeeName, CustId) VALUES("Harsh", 3103);
+SELECT * FROM Employee;
+UPDATE Customer SET CustName = "Suresh" WHERE CustId = 3103;
+SELECT * FROM Customer;
+SELECT SUM(Billing) FROM Customer;
+SELECT AVG(Billing) FROM Customer;
+SELECT MIN(Billing) FROM Customer;
+SELECT MAX(Billing) FROM Customer;
+SELECT COUNT(CustCity), CustCity  FROM Customer GROUP BY CustCity;
+SELECT CustName, CustCity FROM Customer ORDER BY CustCity;
+SELECT CustName FROM Customer UNION SELECT EmployeeName FROM Employee;
+SELECT CustName FROM Customer INTERSECT SELECT EmployeeName FROM Employee;
+SELECT Customer.CustId, Customer.CustName, Employee.EmployeeName FROM Customer LEFT JOIN Employee ON Customer.CustId = Employee.CustId;
+DELETE FROM Employee WHERE Employee.CustId = (SELECT Customer.CustId FROM Customer  WHERE Customer.Billing < 1500 AND CustCity <> "Pune");
+SELECT * FROM Customer;
+SELECT * FROM Employee;
+
+

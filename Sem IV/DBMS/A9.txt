@@ -1,0 +1,96 @@
+use Billing
+
+
+
+db.createCollection("Orders")
+
+
+
+db.Orders.insert( 
+{ _id: 1,
+  Cust_id: "2E3120",
+  Name: "Raj Kumar",
+  Amount : 5000,
+  Status: "A"
+} )
+
+
+
+db.Orders.createIndex(
+{ 
+  "Name":1,
+  "Cust_id":1
+},
+{unique: false})
+
+
+
+db.Orders.insertMany( [ 
+{ _id: 2,
+  Cust_id: "2E3130",
+  Name: "Harshal Singh",
+  Amount : 3200,
+  Status: "A"
+},
+{ _id: 3,
+  Cust_id: "2E3120",
+  Name: "Raj Kumar",
+  Amount : 5200,
+  Status: "R"
+},
+{ _id: 4,
+  Cust_id: "2E3421",
+  Name: "Aditya Patil",
+  Amount : 5100,
+  Status: "A"
+},
+{ _id: 5,
+  Cust_id: "2E4120",
+  Name: "Atharva Deshpande",
+  Amount : 6160,
+  Status: "R"
+},
+{ _id: 6,
+  Cust_id: "2E3421",
+  Name: "Aditya Patil",
+  Amount : 5030,
+  Status: "A"
+},
+{ _id: 7,
+  Cust_id: "2E4120",
+  Name: "Atharva Deshpande",
+  Amount : 3510,
+  Status: "A"
+},
+{ _id: 8,
+  Cust_id: "2E3421",
+  Name: "Aditya Patil",
+  Amount : 10330,
+  Status: "R"
+},
+{ _id: 9,
+  Cust_id: "2E3120",
+  Name: "Raj Kumar",
+  Amount : 1030,
+  Status: "A"
+} ] )
+
+
+
+db.Orders.find().pretty()
+
+
+
+db.Orders.mapReduce(
+  function() { emit( this.Cust_id, this.Amount ); },
+  function( key, values ) { return Array.sum( values ) },
+  {
+    query : { Status : "A" },
+    out : "OrderSum"
+  }
+)
+
+
+
+db.OrderSum.find().pretty()  
+  

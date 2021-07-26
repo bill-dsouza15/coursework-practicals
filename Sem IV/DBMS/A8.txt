@@ -1,0 +1,157 @@
+use AnnualBudget
+
+
+
+db.createCollection("JanToMar")
+
+
+
+db.JanToMar.insertMany( [
+{ _id: 1,
+  Family: "abc",
+  MonthIncome: 15000,
+  Expense: [3000,2000,1000,2000,2000],
+  Savings : 5000,
+  Month : "January",
+  Status: "Surplus"
+},
+{ _id: 2,
+  Family: "pqr",
+  MonthIncome: 20000,
+  Expense: [4000,2500,2000,2000,2000],
+  Savings : 7500,
+  Month : "January",
+  Status: "Surplus"
+},
+{ _id: 3,
+  Family: "lmn",
+  MonthIncome: 12000,
+  Expense: [3000,2000,2000,2500,2500],
+  Month : "January",
+  Status: "Balanced"
+},
+{ _id: 4,
+  Family: "pqr",
+  MonthIncome: 20000,
+  Expense: [3000,2000,1000,2000,15000],
+  Month : "March",
+  Status: "Deficit"
+},
+{ _id: 5,
+  Family: "abc",
+  MonthIncome: 15000,
+  Expense: [5000,2000,1000,3000,4000],
+  Month : "February",
+  Status: "Balanced"
+},
+{ _id: 6,
+  Family: "lmn",
+  MonthIncome: 12000,
+  Expense: [3000,2000,1000,2000,2000],
+  Savings : 2000,
+  Month : "February",
+  Status: "Surplus"
+}
+] )
+
+
+
+db.JanToMar.find().pretty()
+
+
+
+db.JanToMar.createIndex(
+{ 
+  "MonthIncome":-1,
+},
+{unique: false})
+
+
+
+db.JanToMar.createIndex(
+{ 
+  "Savings":1,
+},
+{sparse: true})
+
+
+
+db.JanToMar.createIndex(
+{ 
+  "_id":1,
+  "Family":1
+},
+{unique: true})
+
+
+
+db.JanToMar.createIndex(
+{ 
+  "Family":1,
+  "Month":1,
+  "Expense":1
+},
+{unique: true})
+
+
+
+db.JanToMar.insertMany( [
+{ _id: 7,
+  Family: "abc", 
+  MonthIncome: 15000,
+  Expense: [3000,2000,1000,2000,3000],
+  Savings : 4000,
+  Month : "March",
+  Status: "Surplus"
+},
+{ _id: 8,
+  Family: "lmn",
+  MonthIncome: 12000,
+  Expense: [4000,2000,1000,2000,3000],
+  Month : "March",
+  Status: "Balanced"
+},
+{ _id: 9,
+  Family: "pqr",
+  MonthIncome: 20000,
+  Expense: [5000,2000,1000,3000,9000],
+  Month : "February",
+  Status: "Balanced"
+}
+] )
+
+
+db.JanToMar.find().pretty()
+
+
+
+db.JanToMar.aggregate([{$group:{_id:"$Family", TotalSavings:{$sum:"$Savings"}}}])
+
+
+
+db.JanToMar.aggregate([{$group:{_id:"$Family", AverageSavings:{$avg:"$Savings"}}}])
+
+
+
+db.JanToMar.aggregate( [ { $group : { _id : { Month : "$Month" }, MinSavings : { $min : "$Savings" } } }, { $sort : { "_id.Month" : 1 } }, { $project : { MinSavings : 1 } } ] )
+
+
+
+db.JanToMar.aggregate( [ { $group : { _id : { Month : "$Month" }, MaxSavings : { $max : "$Savings" } } }, { $sort : { "_id.Month" : 1 } }, { $project : { MaxSavings : 1 } } ] )
+
+
+
+db.JanToMar.aggregate( [ { $sort : { Status : 1} },{ $group : { _id : { Status : "$Status", Month : "$Month" }, Family : { "$addToSet" : "$Family"} } },{ $project : {Family : 1 } } ] )
+
+
+
+db.JanToMar.aggregate( [ { $sort : { "Status" : 1 } }, { $group : { _id : { Status : "$Status" }, Family : { $first : "$Family" } } }, { $project : { "Family" : 1 } } ] )
+
+
+
+db.JanToMar.aggregate( [ { $match : { "Savings" : { $eq : 5000 } } }, { $group : { _id : { Savings : "$Savings" }, Family : { $last : "$Family" } } }, { $project : { "Family" : 1 } } ] )
+
+
+
+
+
