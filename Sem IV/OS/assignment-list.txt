@@ -1,6 +1,11 @@
 A1 - Creating address book using shell script.
+
 A2 - Implement a program to exhibit UNIX Process Control where parent process sorts array elements in descending order and child process sorts array elements in ascending order. Show the demonstration of wait() and zombie process. 
+
 A3 - Write a program to show the demonstration of Scheduling Algorithms: 1) FCFS   2) SJF   3) Round Robin.
+
 A4 - Thread management using pthread library. Implement matrix multiplication using multithreading. Application should have pthread_create, pthread_join, pthread_exit. In the program, every thread must return the value and must be collected in pthread_join in the main function. Final sum of row column multiplication must be done by main thread (main function).
+
 A5 - Thread synchronization using counting semaphores and mutual exclusion using mutex. Application to demonstrate: producer‐consumer problem with counting semaphores and mutex.
+
 A6 - Linux kernel configuration, compilation, and rebooting from the newly compiled kernel. Add your own system call in the kernel. 
