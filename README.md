@@ -1,8 +1,8 @@
 # coursework-practicals
 
-This is a collection of all the practical assignments I performed as part of my coursework (Sem IV onwards).
+This is a collection of all the practical assignments I have performed as part of my coursework (Sem IV onwards).
 
-Below are the folders and subjects under them alongwith the drive link containing screenshots of the output for each assignment (to get an idea of what the output looks like):
+Below are the folders and subjects under them. The drive link containing images of the output and/or reports for each assignment is also added:
 
 | Folder Name  | Subject Code |        Subject Name        |                                               Output Links                                               |
 |:------------:|:------------:|:--------------------------:|:--------------------------------------------------------------------------------------------------------:|
