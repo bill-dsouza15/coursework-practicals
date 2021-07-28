@@ -1,0 +1,10 @@
+A1 - Write a program for solving linearly seperable problem using Perceptron Model.
+
+A2 - Design BPN algorithm
+
+A3
+	(a) - Impement Union, Intersection, Complement and Difference operations on fuzzy sets.
+	
+	(b) - Also create fuzzy relation by Cartesian product of any two fuzzy sets and perform max-min composition on any two fuzzy relations.
+
+A4 - Implement travelling salesman problem (tsp) using genetic algorithm.

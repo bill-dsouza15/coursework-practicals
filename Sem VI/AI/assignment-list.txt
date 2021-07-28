@@ -1,0 +1,11 @@
+A1 - Implement A* approach for 8 puzzle problem.
+
+A2 - Assignment on Constraint Satisfaction Problem for Graph Coloring Problem.
+
+A3 - Implementation of Min-Max algorithm for tic tac toe game.
+
+A4 - Implement goal stack planning for block worlds problem.
+
+A5 - Implement Naïve Bayes algorithm for sample data.
+
+A6 - Implementation of Decision Trees for sample data.
