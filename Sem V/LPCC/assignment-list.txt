@@ -1,0 +1,21 @@
+A1
+	(a) - Generate symbol table (ST) for the assembly language program.
+  
+	(b) - Generate Literal table for the assembly language program.
+
+	(c) - Generate Literal and Pool table for the assembly language program.
+
+	(d) - Generate Symbol Table (ST), Literal Table (LT) and Intermediate code(IC) for the assembly language program.
+
+A2
+	(a) - Design suitable data structures & implement pass‐1 for a macro without parameter.
+  
+	(b) - Design suitable data structures & implement pass‐I for a macro with parameters.
+
+	(c) - Design suitable data structures & implement pass‐I for a Nested Macro. 
+
+A3    - Write a program to implement a lexical analyzer for parts of speech.
+
+A4    - Write a program to evaluate an arithmetic expression, built‐in functions, and variables using YACC specification.
+
+A5    - Write a program for converting a simple expression into 3 address code. 

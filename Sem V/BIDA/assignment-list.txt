@@ -1,0 +1,16 @@
+A1    - Decision Support System for Graduate Admission Applications.
+
+A2    - Designing Data Warehouse Schemas for Business Processes of a Superstore.
+
+A3
+	(a) - Performing text pre-processing with creation of inverted index for unstructured textual data.  
+
+	(b) - Studying and implementing sentiment analysis for general tweets using TF/IDF.
+
+A4    - Creating a Dashboard using Power Bi.
+
+A5    - Creating a Dashboard on Tableau for visualizing data.
+
+A6    - Creating a Dashboard on Tableau after connecting it to a Google Sheet for Data.
+
+Skill based activity - Data collection through surveys and opinion mining 

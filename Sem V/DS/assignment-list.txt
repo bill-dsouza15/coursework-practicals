@@ -1,0 +1,25 @@
+A1 - Perform the following operations using Python on suitable data sets:
+	1. Read a data from different formats(like csv,xls)
+	2. Describe attributes of data, checking data types of each column, format of each column
+	3. Counting unique values of data
+	4. Converting variable data type (e.g. from long to short, vise versa)
+	5. Indexing and selecting data, sort data
+	6. Identifying missing values and fill in the missing values.
+
+A2 - Perform the following operations using Python on the data sets :
+	1. Compute and display summary statistics for each feature available in the dataset (eg. minimum value, maximum value, mean, range, standard deviation, variance  and percentiles).
+	2. Data cleaning, Data integration, Data transformation
+	3. Data Visualization - Create a histogram for each feature in the dataset to illustrate the feature distributions.
+
+A3 - Perform the following:
+	1. Build a Data model in Python for the dataset chosen in Assignment 1 or 2 and apply  Linear Regression/Logistic Regression.
+	2. Infer the result using  accuracy score
+
+A4 - Perform the following:
+	1. Build a Data model in Python using any classification model (Decision Tree or  Naïve Bayes) and infer the result using accuracy score.
+	2. Compare different classification models (not limited to NB and DT only) with respect to feature selection and accuracy. Infer the result: Which model is best suited for the dataset chosen?
+
+A5 - Perform the following:
+	1. Visualize the data and its outcome in Python by plotting the various graphs.
+	2. Use Scatter plot, Bar plot, Box plot and Histogram.
+

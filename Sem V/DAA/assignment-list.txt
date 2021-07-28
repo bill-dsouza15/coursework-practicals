@@ -1,0 +1,13 @@
+A1 - Write a program to implement linear search.
+
+A2 - Implement Divide and Conquer technique for quick sort.
+
+A3 - Implement Divide and Conquer strategy for merge sort. 
+
+A4 - Implement Dynamic Programming Approach for a given problem - Multistage Graph.
+
+A5 - Implement Greedy approach for given problem - Optimal Merge Pattern.
+
+A6 - Implement Backtracking for a given problem - Graph Coloring.
+
+A7 - Implement Branch and Bound concept for a given problem - 0/1 Knapsack.
