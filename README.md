@@ -1,4 +1,4 @@
-# coursework-practicals
+# My Coursework Practicals
 
 This is a collection of all the practical assignments I have performed as part of my coursework (Sem IV onwards).
 
